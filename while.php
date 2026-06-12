@@ -17,7 +17,7 @@
             font-family: Arial, sans-serif;
             
             /* 🩵 เปลี่ยนพื้นหลังหลักของหน้าเว็บเป็นสีฟ้าอ่อนพาสเทล (Soft Pastel Blue) */
-            background-color: #e3fafc; 
+            background-color: #04ff64; 
         }
 
         /* สร้างกล่องครอบเนื้อหาทั้งหมดเพื่อให้ดูเป็นระเบียบ */
@@ -43,7 +43,7 @@
 
         input[type="submit"] {
             padding: 8px 20px;
-            background-color: #007bff;
+            background-color: #04ff64;
             color: white;
             border: none;
             border-radius: 4px;
@@ -84,7 +84,7 @@
     <div class="container">
         <h1>งานที่ 1 ภาณุวิชญ์ คชเวช<br>BIT.2/5 เลขที่ 09</h1>
 
-        <p><a href="while.php" style="color: #007bff; text-decoration: none;">While Loop</a></p>
+        <p><a href="while.php" style="color: #04ff64; text-decoration: none;">While Loop</a></p>
 
         <form action="" method="GET">
             <label for="num">เลขแม่สูตรคูณ</label><br>
@@ -99,13 +99,17 @@
                 echo "<div class='result'>";
                 echo "<h3 style='margin-top: 0; margin-bottom: 10px;'>สูตรคูณแม่ " . $num . "</h3>";
                 
-                for($i = 1; $i <= 12; $i++){
+                // เปลี่ยนเป็น While Loop ตรงนี้ครับ
+                $i = 1;
+                while($i <= 12){
                     // สลับคลาสสีฟ้าอ่อน (bg-blue) กับสีขาว (bg-white)
                     $bgClass = ($i % 2 == 0) ? 'bg-blue' : 'bg-white';
                     
                     echo "<div class='row-item " . $bgClass . "'>";
                     echo $num . " x " . $i . " = ". ($num * $i);
                     echo "</div>";
+                    
+                    $i++; // ห้ามลืมเพิ่มค่าเด็ดขาด ไม่งั้นเว็บค้างนะคุณภาณุวิชญ์!
                 }
                 echo "</div>";
             }
